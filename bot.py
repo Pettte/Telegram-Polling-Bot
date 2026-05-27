@@ -58,7 +58,7 @@ async def alias_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
 async def duo_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     await update.callback_query.answer()
     await update.callback_query.edit_message_text(
-        "Enter Team 1 — combine two players with x (e.g. Stabbing x Social):"
+        "Enter Poll Option 1 aliases (e.g. Stabbing x Social):"
     )
     return DUO_TEAM1
 
@@ -127,7 +127,7 @@ async def alias_name(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 async def duo_team1(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     context.user_data["duo_team1"] = update.message.text.strip()
     await update.message.reply_text(
-        "Enter Option 2 — combine two players with x (e.g. Player3 x Player4):"
+        "Enter Poll Option 2 aliases (e.g. Player3 x Player4):"
     )
     return DUO_TEAM2
 
